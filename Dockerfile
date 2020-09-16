@@ -9,7 +9,10 @@ FROM node:latest
 LABEL maintainer="Moringa School <moringaschool.com>"
 
 # Install redis driver for node.js
+RUN npm init 
+RUN npm set init.author.name "Mutua"
+RUN npm set  init.license "MIT"
 RUN npm install redis
 
 # Copy the source code to the Docker image
-ADD example.js /myapp/example.js
+ADD composeHelper.js /myapp/composeHelper.js
